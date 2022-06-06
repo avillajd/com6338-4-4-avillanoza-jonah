@@ -67,6 +67,33 @@ if (word.indexOf(key)== -1) {
 wordToGuessEl.innerHTML= correctLetters.join("")
 }
 
+// //  Win or Lose Function with New Round Function
+// wins();
+// losses();
+// resetGame();
 
+
+// function wins() {
+//   if (correctLetters.join("") == 1) {
+//     winsEl.innerHTML ++
+//     console.log("you won!")
+//   }
+// }
+
+// function losses() {
+//   if (remain == 0) {
+//     newRound()
+//     lossesEl.innerHTML ++
+//     console.log("Thats a Loss !")
+//   }
+
+// }
+
+// function resetGame () {
+//     remain = 10;
+//     correctLetters = [];
+//     word = words[Math.floor(Math.random()* words.length)];
+//     console.log("Letter to guess: " + letterToGuess);
+//   }
 
 
