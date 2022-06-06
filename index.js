@@ -10,7 +10,7 @@ var words = [
   'meatloaf',
   'ukulele',
   'mango'
-]
+];
 
 // Randomize Words in Array
 var word = words[Math.floor(Math.random()* words.length)];
@@ -52,6 +52,10 @@ document.onkeyup = function(e) {
   var key = e.key.toLowerCase()
   console.log(e.key)
 
+if (incorrectLettersEl.innerHTML.includes(key) || !key.match(/[a-z]/i)) {
+    return;
+}
+
 if (word.indexOf(key)== -1) {
   incorrectLettersEl.innerHTML += key
   remain --
@@ -67,23 +71,28 @@ if (word.indexOf(key)== -1) {
 wordToGuessEl.innerHTML= correctLetters.join("")
 }
 
-// //  Win or Lose Function with New Round Function
-// wins();
-// losses();
+if (correctLetters.join("") == word) {
+  wins++;
+  console.log("You Won!")
+}
+
+//  Win or Lose Function with New Round Function
+// winner();
+// loser();
 // resetGame();
 
 
-// function wins() {
+// function winner() {
 //   if (correctLetters.join("") == 1) {
-//     winsEl.innerHTML ++
+//     wins++;
 //     console.log("you won!")
 //   }
 // }
 
-// function losses() {
+// function loser() {
 //   if (remain == 0) {
-//     newRound()
-//     lossesEl.innerHTML ++
+//     losses ++; 
+//     resetGame();
 //     console.log("Thats a Loss !")
 //   }
 
@@ -93,7 +102,5 @@ wordToGuessEl.innerHTML= correctLetters.join("")
 //     remain = 10;
 //     correctLetters = [];
 //     word = words[Math.floor(Math.random()* words.length)];
-//     console.log("Letter to guess: " + letterToGuess);
 //   }
-
 
