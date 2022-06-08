@@ -162,8 +162,10 @@ function updateGuessesInfo(){
 
 //create the key press functionality
 document.onkeyup = function (e){
-
+  
   var guessedLetter = e.key.toLowerCase()
+
+  if(!/^[a-z]{1}$/g.test(guessedLetter)) return
   
   if (currentWord.includes(guessedLetter)) {
     correctLetters.push(guessedLetter)
